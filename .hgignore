@@ -1,0 +1,5 @@
+syntax: glob
+pkg/*
+html/*
+*.gem
+.bundle

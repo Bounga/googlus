@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+require "rubygems"
+require "googlus"
+require "optparse"
+
+action = :shorten
+opts = OptionParser.new
+
+opts.banner = "Usage: #{File.basename($0)} [options] URL"
+opts.separator ""
+opts.on("-s", "--shorten", "Shorten URL") { action = :shorten }
+opts.on("-e", "--expand", "Expand SHORT_URL") { action = :expand }
+opts.on("-a", "--analytics", "Analytics for SHORT_URL") { action = :analytics }
+opts.on("-v", "--version", "Show #{Googlus::NAME} version") { puts Googlus::NAME + " v" + Googlus::VERSION; exit(0) }
+opts.on("-L", "--license", "Show #{Googlus::NAME} license") { puts Googlus::LICENSE; exit(0) }
+opts.on("-V", "--verbose", "Run #{Googlus::NAME} in verbose mode") { $VERBOSE = true }
+opts.on_tail("-h", "--help", "Show this help") { puts opts.to_s; exit(0) }
+
+if ARGV.empty?
+  puts opts.to_s
+  exit(1)
+end
+      
+url = opts.parse(ARGV)
+
+case action
+when :shorten
+  puts Googlus::Shorten.new(url).short_url
+when :expand
+  puts Googlus::Expand.new(url).url
+when :analytics
+  puts Googlus::Analytic.new(url).to_s
+end
+
+exit(0)

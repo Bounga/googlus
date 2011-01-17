@@ -1,0 +1,56 @@
+-*-markdown-*-
+
+Googlus
+=======
+
+Description
+-----------
+
+Ruby wrapper for Google URL Shortener REST API.
+
+Features:
+
+- shorten URLs
+- expand URLs
+- analyse URLs usage
+
+Installation
+------------
+
+gem install googlus
+
+Usage
+-----
+
+In your Ruby code:
+
+{{{
+#!ruby
+Googlus::Shorten.new(long_url).short_url
+Googlus::Expand.new(short_url).url
+}}}
+
+On the command-line:
+
+{{{
+#!bash
+$ googlus -s http://www.bounga.org # Shorten URL
+$ googlus -e http://goo.gl/arOIJ   # Expand short URL
+$ googlus -a http://goo.gl/arOIJ   # Get analytics for short URL
+}}}
+
+
+Other
+-----
+
+If you want to contribute you should take a look at:
+
+- [Source Style](http://www.bitbucket.org/Bounga/googlus/SourceStyle)
+- [Ticket Guidelines](http://www.bitbucket.org/Bounga/googlus/wiki/TicketGuidelines)
+- [Contributing](http://www.bitbucket.org/Bounga/gus/googlus/Contributing)
+
+You can have a look at [RDoc](http://rubydoc.info/gems/googlus/) too.
+
+Problems, comments, and suggestions are welcome on the [ticket system](http://www.bitbucket.org/Bounga/googlus/issues/new/).
+
+Copyright (c) 2011 Nicolas Cavigneaux, released under the MIT license

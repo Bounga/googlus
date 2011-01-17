@@ -1,0 +1,24 @@
+module Googlus
+  # Shorten a URL
+  class Shorten
+    attr_reader :short_url, :url
+    
+    # Long URL to shorten
+    def initialize(url)
+      http = Net::HTTP.new("www.googleapis.com", 443)
+      http.use_ssl = true
+      
+      params = {'longUrl' => url}.to_json
+      resp, body = http.post("/urlshortener/v1/url", params, {'Content-Type' => 'application/json'})
+      body = JSON.parse(body)
+      
+      if resp.code.to_i == 200
+        @short_url = body["id"]
+        @url = body["longUrl"]
+      else
+        error = body["error"]
+        raise "Shortening error: #{error["code"]} - #{error["message"]}"
+      end
+    end
+  end
+end
