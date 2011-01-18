@@ -24,16 +24,15 @@ Usage
 
 In your Ruby code:
 
-Googlus::Shorten.new(long_url).short_url
-Googlus::Expand.new(short_url).url
+    Googlus::Shorten.new(long_url).short_url
+    Googlus::Expand.new(short_url).url
 
 On the command-line:
 
-$ googlus -s http://www.bounga.org # Shorten URL
-$ googlus -e http://goo.gl/arOIJ   # Expand short URL
-$ googlus -a http://goo.gl/arOIJ   # Get analytics for short URL
-
-
+    $ googlus -s http://www.bounga.org # Shorten URL
+    $ googlus -e http://goo.gl/arOIJ   # Expand short URL
+    $ googlus -a http://goo.gl/arOIJ   # Get analytics for short URL
+    
 Other
 -----
 
