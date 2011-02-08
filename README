@@ -10,9 +10,9 @@ Description
 
 Features:
 
-- shorten URLs
-- expand URLs
-- analyse URLs usage
+- shorten long URLs to Google short ones
+- expand Google short URLs 
+- analyse Google short URLs usage
 
 Installation
 ------------
@@ -38,7 +38,9 @@ Other
 -----
 
 If you want to contribute you should take a look at:
-
+                     
+- [Homepage](http://www.bitbucket.org/Bounga/googlus/)
+- [Source code](http://www.bitbucket.org/Bounga/googlus/src/)
 - [Source Style](http://www.bitbucket.org/Bounga/googlus/wiki/SourceStyle)
 - [Ticket Guidelines](http://www.bitbucket.org/Bounga/googlus/wiki/TicketGuidelines)
 - [Contributing](http://www.bitbucket.org/Bounga/googlus/wiki/Contributing)
